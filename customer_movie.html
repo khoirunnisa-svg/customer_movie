@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetStream - Platform Streaming Movie</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans antialiased">
+
+    <!-- NAVBAR -->
+    <nav class="bg-gray-950 border-b border-gray-800 px-6 py-4 flex justify-between items-center sticky top-0 z-50">
+        <div class="flex items-center space-x-2">
+            <span class="text-2xl font-black text-red-600 tracking-wider">NetStream</span>
+        </div>
+        <div class="space-x-6 text-sm font-medium">
+            <a href="#" onclick="switchPage('catalog')" class="hover:text-red-500 transition">Katalog Movie</a>
+            <a href="#" onclick="switchPage('player')" class="hover:text-red-500 transition">Koleksi Saya</a>
+            <span class="bg-gray-800 px-3 py-1.5 rounded-full text-xs border border-gray-700">👤 Rizky Pratama (Jakarta)</span>
+        </div>
+    </nav>
+
+    <!-- KONTROL SIMULASI HALAMAN -->
+    <div class="bg-blue-900/40 border-b border-blue-800 py-2 px-4 text-center text-xs text-blue-200">
+        ℹ️ <strong>Demo Navigasi:</strong> Klik tombol <button onclick="switchPage('catalog')" class="underline font-bold">Katalog</button> atau <button onclick="switchPage('player')" class="underline font-bold">Pemutar/Sukses</button> untuk melihat perpindahan antarmuka sesuai Activity Diagram.
+    </div>
+
+    <!-- MAIN CONTAINER -->
+    <main class="max-w-6xl mx-auto p-6 my-6">
+
+        <!-- ================= PAGE 1: KATALOG & DETAIL MOVIE (`movie`) ================= -->
+        <section id="page-catalog" class="space-y-6">
+            <h1 class="text-2xl font-bold border-l-4 border-red-600 pl-3">Daftar Movie Tersedia</h1>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Movie Item 1: Inception -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="h-48 bg-gray-700 flex items-center justify-center text-gray-500 font-semibold text-lg">
+                            🎬 Poster Inception
+                        </div>
+                        <div class="p-5 space-y-2">
+                            <span class="text-xs bg-red-600/30 text-red-400 font-semibold px-2.5 py-1 rounded">Sci-Fi</span>[cite: 2]
+                            <h3 class="text-xl font-bold mt-1">Inception</h3>[cite: 2]
+                            <p class="text-sm text-gray-400">Studio: Hollywood Pictures</p>[cite: 2]
+                            <p class="text-sm text-gray-400">Durasi: 148 Menit</p>[cite: 2]
+                            <div class="text-lg font-bold text-emerald-400 pt-2">Rp 45.000</div>[cite: 2]
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <button onclick="prosesBeli('Inception', 45000)" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2.5 rounded-lg transition shadow-md">
+                            Beli/Sewa Movie
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Movie Item 2: The Witcher -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="h-48 bg-gray-700 flex items-center justify-center text-gray-500 font-semibold text-lg">
+                            🎬 Poster The Witcher
+                        </div>
+                        <div class="p-5 space-y-2">
+                            <span class="text-xs bg-blue-600/30 text-blue-400 font-semibold px-2.5 py-1 rounded">Fantasy</span>[cite: 2]
+                            <h3 class="text-xl font-bold mt-1">The Witcher</h3>[cite: 2]
+                            <p class="text-sm text-gray-400">Studio: Netflix Original</p>[cite: 2]
+                            <p class="text-sm text-gray-400">Durasi: 60 Menit</p>[cite: 2]
+                            <div class="text-lg font-bold text-emerald-400 pt-2">Rp 35.000</div>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <button onclick="prosesBeli('The Witcher', 35000)" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2.5 rounded-lg transition shadow-md">
+                            Beli/Sewa Movie
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Movie Item 3: Everything Everywhere All at Once -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="h-48 bg-gray-700 flex items-center justify-center text-gray-500 font-semibold text-lg">
+                            🎬 Poster EEAAO
+                        </div>
+                        <div class="p-5 space-y-2">
+                            <span class="text-xs bg-purple-600/30 text-purple-400 font-semibold px-2.5 py-1 rounded">Action</span>[cite: 2]
+                            <h3 class="text-xl font-bold mt-1">Everything Everywhere...</h3>[cite: 2]
+                            <p class="text-sm text-gray-400">Studio: A24 Studio</p>[cite: 2]
+                            <p class="text-sm text-gray-400">Durasi: 139 Menit</p>[cite: 2]
+                            <div class="text-lg font-bold text-emerald-400 pt-2">Rp 50.000</div>[cite: 2]
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <button onclick="prosesBeli('Everything Everywhere All at Once', 50000)" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2.5 rounded-lg transition shadow-md">
+                            Beli/Sewa Movie
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= PAGE 2: KONFIRMASI & PEMUT
